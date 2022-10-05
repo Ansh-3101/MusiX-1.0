@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".QueueListActivity">
+      <TextView
+          android:id="@+id/emptyQueue"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_centerInParent="true"
+              app:layout_constraintTop_toTopOf="parent"
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintEnd_toEndOf="parent"
+          android:text="Queue is empty"
+          android:textSize="20sp"
+          android:textStyle="bold"
+          android:visibility="gone"/>
+
+
+    <LinearLayout
+        android:id="@+id/queueLL"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+        <ImageButton
+            android:id="@+id/queue_down"
+            android:layout_width="60dp"
+            android:layout_height="65dp"
+            android:src="@drawable/queue_down"
+            android:backgroundTint="#00000000"
+            android:scaleType="fitXY"/>
+
+        <TextView
+            android:layout_gravity="center"
+            android:gravity="center"
+                android:textColor="@color/inverseCol"
+                android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PLAYING FROM QUEUE"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/nowPLayLL"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/queueLL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/queueLL"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="Now Playing"
+                android:textColor="@color/inverseCol"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="15dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/queue_icon_view"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/resizednew"
+
+            />
+
+        <TextView
+            android:layout_marginStart="10dp"
+            android:id="@+id/queuemusic_title_text"
+            android:layout_width="330dp"
+                android:textColor="@color/inverseCol"
+            android:layout_height="50dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:padding="10dp"
+            android:text="Music"
+
+            />
+    </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/queueDetail"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nowPLayLL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nowPLayLL"
+     android:layout_margin="10dp"
+            tools:ignore="NotSibling">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Next In Queue"
+                android:textColor="@color/inverseCol"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/clearQueue"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_marginLeft="110dp"
+                android:textColor="@color/inverseCol"
+            android:backgroundTint="#00000000"
+            android:text="Clear queue"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/queueList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/queueDetail"
+        android:background="#00000000"
+        app:layout_constraintTop_toBottomOf="@+id/queueDetail"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:scrollbarFadeDuration="2"
+        android:scrollbarThumbVertical="@drawable/scrollthumb"
+        android:scrollbars="vertical" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

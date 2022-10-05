@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">MusiX</string>
+    <string name="title_of_the_song">Title of the song</string>
+    <string name="music">Music</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="createFab">TODO</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+</resources>

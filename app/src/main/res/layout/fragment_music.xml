@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:backgroundTint="@color/black"
+        tools:background="@color/black"
+        app:cardCornerRadius="12dp"
+        android:animateLayoutChanges="true"
+        app:cardElevation="5dp"
+        tools:context=".MusicFragment">
+    <ImageView
+        android:id="@+id/fragmentBgImg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"/>
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+             android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <ImageView
+            android:id="@+id/songImgNP"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="8dp"
+            android:src="@drawable/resizednew"/>
+        <TextView
+            android:id="@+id/songNameNP"
+            android:layout_width="140dp"
+            android:layout_height="40dp"
+            android:ellipsize="marquee"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:singleLine="true"
+            android:text="song_name"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+        <ImageButton
+            android:padding="-10dp"
+            android:layout_width="35dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="20dp"
+            android:scaleType="fitXY"
+            android:id="@+id/prevBtnNP"
+            android:layout_gravity="center"
+            android:backgroundTint="#00000000"
+            android:src="@drawable/previous"
+            />
+
+        <ImageButton
+            android:padding="-30dp"
+            android:layout_width="28dp"
+            android:layout_height="45dp"
+            android:scaleType="fitXY"
+
+            android:layout_marginStart="5dp"
+            android:id="@+id/playPauseBtnNP"
+            android:layout_gravity="center"
+            android:backgroundTint="#00000000"
+            android:src="@drawable/pause1"
+            />
+        <ImageButton
+            android:padding="-10dp"
+            android:layout_width="35dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="5dp"
+            android:id="@+id/nextBtnNP"
+            android:scaleType="fitXY"
+            android:layout_gravity="center"
+           android:backgroundTint="#00000000"
+            android:src="@drawable/next"
+            />
+
+
+    </LinearLayout>
+
+        <ProgressBar
+        android:id="@+id/song_Progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:progressBackgroundTint="#575A57"
+        android:progressTint="#E6E6E6"
+                android:indeterminate="false"
+        tools:progress="40"
+        android:layout_marginBottom="-6dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+            />
+
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

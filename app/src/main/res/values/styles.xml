@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="curved">
+        <item name="cornerSize">15%</item>
+    </style>
+
+    <style name="SearchViewStyle" parent="android:Widget.Material.Light.SearchView">
+        <item name="android:textColor">@color/cardColor</item>
+        <item name="android:editTextColor">@color/cardColor</item>
+        <item name="android:textColorHint">#595959</item>
+    </style>
+</resources>

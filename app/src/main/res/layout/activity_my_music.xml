@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+        android:background="@color/main_BG"
+    android:layout_height="match_parent"
+    tools:context=".MyMusicActivity">
+    <androidx.drawerlayout.widget.DrawerLayout
+            android:id="@+id/drawer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            tools:context=".MyMusicActivity">
+
+
+<androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <TextView
+            android:id="@+id/nomusic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+        android:text="No Songs Found"
+        android:textColor="#B51616"
+            android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/barLL"
+            android:background="@color/cardColor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/HomeBarLL"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:orientation="horizontal">
+
+            <ImageButton
+                    android:id="@+id/menu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY"
+                    android:backgroundTint="#00000000"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintEnd_toStartOf="@+id/searchView"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:src="@drawable/drawer_menu"
+                    />
+            <androidx.appcompat.widget.SearchView
+                    android:id="@+id/searchView"
+                    android:backgroundTint="@color/inverseCol"
+                    app:queryHint="Search Here"
+                    android:theme="@style/SearchViewStyle"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/menu"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:iconifiedByDefault="true"
+                    app:searchIcon="@drawable/search"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    app:closeIcon="@drawable/search_close"
+                    android:background="@drawable/search_view"
+                    android:imeOptions="actionSearch"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/LikeBarLL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:orientation="horizontal">
+            <TextView
+                    android:id="@+id/likeTv"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/inverseCol"
+                    android:text="Liked Songs"
+                    android:textStyle="bold"
+                    android:textSize="25sp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"/>
+            <ImageButton
+                    android:id="@+id/like_shuffle_btn"
+                    android:layout_marginStart="80dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_width="59dp"
+                    app:layout_constraintEnd_toStartOf="@+id/like_play_btn"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:scaleType="fitXY"
+                    android:backgroundTint="#00000000"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="-0dp"
+                    android:layout_height="54dp"
+                    android:src="@drawable/shuffle"
+                    />
+            <ImageButton
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:id="@+id/like_play_btn"
+                    android:layout_width="59dp"
+                    android:backgroundTint="#00000000"
+                    android:scaleType="fitXY"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="-0dp"
+                    android:layout_gravity="end"
+                    android:layout_height="54dp"
+                    android:src="@drawable/ic_round_play_circle_filled_24"
+                    />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/PlayListBarLL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:orientation="horizontal">
+            <TextView
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:id="@+id/playlistTv"
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/inverseCol"
+                    android:layout_height="wrap_content"
+                    android:text="PlayLists"
+                    android:textStyle="bold"
+                    android:textSize="25sp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"/>
+            <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/addSongs"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentEnd="true"
+                    app:civ_circle_background_color="#119F00"
+                    android:src="@drawable/add"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginStart="180dp"
+                    android:layout_marginEnd="20dp"
+                    />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mainLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/nav"
+            app:layout_constraintTop_toBottomOf="@+id/barLL"
+                >
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="5dp"
+                tools:listitem="@layout/recycler_cardview"
+                android:scrollbarAlwaysDrawVerticalTrack="true"
+                android:scrollbarFadeDuration="2"
+                android:scrollbarThumbVertical="@drawable/scrollthumb"
+                android:scrollbars="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                 />
+            <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="5dp"
+                    android:scrollbarAlwaysDrawVerticalTrack="true"
+                    android:scrollbarFadeDuration="2"
+                    android:scrollbarThumbVertical="@drawable/scrollthumb"
+                    android:scrollbars="vertical"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    />
+
+
+
+                <androidx.fragment.app.FragmentContainerView
+                        android:id="@+id/nowPlaying"
+                        android:name="com.example.musix.MusicFragment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/recyclerView"
+                       app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="15dp"
+                        tools:ignore="NotSibling"
+                        android:visibility="visible"
+                        tools:layout="@layout/fragment_music" />
+
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.cardview.widget.CardView
+                android:id="@+id/nav"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:backgroundTint="@color/cardColor"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="10dp"
+                android:gravity="center">
+            <androidx.constraintlayout.widget.ConstraintLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:id="@+id/navCL"
+                    android:gravity="center"
+                    >
+
+                <ImageButton
+                        android:id="@+id/Home"
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/Like"
+                        android:backgroundTint="#00000000"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/greenhome" />
+
+                <ImageButton
+                        android:id="@+id/Like"
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
+                        app:layout_constraintStart_toEndOf="@+id/Home"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/PLayList"
+                        android:backgroundTint="#00000000"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/unliked" />
+
+                <ImageButton
+                        android:id="@+id/PLayList"
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/Like"
+                        android:backgroundTint="#00000000"
+                        android:contentDescription="TODO"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/playlist" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/MPFRR"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone">
+            <androidx.fragment.app.FragmentContainerView
+                    android:id="@+id/MusicPlayerFragment"
+                    android:name="com.example.musix.MusicPlayerFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/black"
+                    tools:layout="@layout/fragment_music_player" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/PLFRR"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+        <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/PlayListFragment"
+                android:name="com.example.musix.PlayListFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:layout="@layout/fragment_play_list" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.navigation.NavigationView
+                android:id="@+id/navView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:fitsSystemWindows="true"
+                app:headerLayout="@layout/nav_header"
+                app:menu="@menu/nav_menu"/>
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:animateLayoutChanges="true"
+        app:cardElevation="10dp"
+        android:layout_margin="10dp"
+        android:backgroundTint="@color/cardColor"
+        app:cardCornerRadius="15dp">
+
+
+     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+
+        >
+
+    <LinearLayout
+            android:layout_marginStart="10dp"
+            android:id="@+id/playlistLL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="0.5"
+      >
+
+            >
+    <TextView
+            android:id="@+id/playlistName"
+            android:layout_width="110dp"
+            android:layout_height="30dp"
+            tools:text="Musix"
+            android:textColor="@color/inverseCol"
+            android:layout_marginTop="10dp"
+            android:textSize="18sp"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:singleLine="true" />
+        <TextView
+
+                android:layout_width="110dp"
+                android:layout_height="22dp"
+                android:textColor="@color/inverseCol"
+                android:text="Created on :-"
+                android:layout_marginTop="5dp"
+                android:textSize="18sp"
+                />
+        <TextView
+                android:id="@+id/playlistDate"
+                android:layout_width="110dp"
+                android:layout_height="25dp"
+                tools:text="22/22/2022"
+                android:textColor="@color/inverseCol"
+                android:layout_marginTop="5dp"
+                android:textSize="18sp"
+                />
+        <TextView
+                android:id="@+id/playlistSize"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                tools:text="10"
+                android:textColor="@color/inverseCol"
+                android:layout_marginTop="5dp"
+                android:textSize="18sp"
+              />
+    </LinearLayout>
+
+         <ImageView
+                 android:id="@+id/playlistImg"
+                 android:layout_width="0dp"
+                 android:layout_weight="1"
+                 android:layout_height="130dp"
+                 android:scaleType="fitXY"
+                 android:src="@drawable/resizednew"
+                 app:shapeAppearanceOverlay="@style/curved"
+                 />
+    <RelativeLayout
+            android:id="@+id/RR"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd ="true"
+            android:layout_gravity="end"
+            android:visibility="gone"
+            >
+
+        <ImageView
+                android:id="@+id/playlistImg1"
+                android:layout_width="65dp"
+                android:layout_marginRight="65dp"
+                android:layout_height="65dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/resizednew"
+                app:shapeAppearanceOverlay="@style/curved" />
+
+        <ImageView
+                android:layout_below="@+id/playlistImg1"
+                android:id="@+id/playlistImg2"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/resizednew"
+                app:shapeAppearanceOverlay="@style/curved" />
+
+        <ImageView
+                android:layout_below="@+id/playlistImg3"
+                android:id="@+id/playlistImg4"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:scaleType="fitXY"
+                android:layout_marginLeft="65dp"
+                android:src="@drawable/resizednew"
+                app:shapeAppearanceOverlay="@style/curved" />
+
+        <ImageView
+                android:id="@+id/playlistImg3"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_marginLeft="65dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/resizednew"
+                app:shapeAppearanceOverlay="@style/curved" />
+
+</RelativeLayout>
+     </LinearLayout>
+
+<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/playlistLL"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        >
+    <ImageButton
+            android:id="@+id/PlayPlayList"
+            android:layout_weight="1"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:backgroundTint="#00000000"
+            android:src="@drawable/playgreen" />
+    <ImageButton
+            android:id="@+id/ShufflePlayList"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:backgroundTint="#00000000"
+            android:src="@drawable/greenshuffle" />
+    <ImageButton
+            android:id="@+id/deletePlayList"
+            android:layout_weight="1"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:backgroundTint="#00000000"
+            android:src="@drawable/deletegreen" />
+
+</LinearLayout>
+
+
+
+
+</androidx.cardview.widget.CardView>

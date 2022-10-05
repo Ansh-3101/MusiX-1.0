@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+>
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+<RelativeLayout
+        android:id="@+id/moreView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent">
+    <LinearLayout
+        android:id="@+id/infoLL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#00000000"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/moreTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Song Name"
+            android:textColor="@color/inverseCol"
+            android:layout_marginTop="20dp"
+            android:padding = "10dp"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:gravity="center"
+           />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/moreImg"
+            android:layout_marginTop="15dp"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            tools:src="@drawable/resizednew"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/LikeLL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/infoLL"
+        android:layout_marginTop="40dp"
+        android:background="#00000000"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <ImageButton
+            android:id="@+id/moreLike"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="15dp"
+            android:backgroundTint="#00000000"
+            android:src="@drawable/unliked" />
+
+        <TextView
+            android:id="@+id/LikeText"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:text="Like"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/QueueLL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/LikeLL"
+        android:layout_marginTop="40dp"
+        android:background="#00000000"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <ImageButton
+            android:id="@+id/QueueImg"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="15dp"
+                android:backgroundTint="#00000000"
+            android:src="@drawable/add_queue" />
+
+        <TextView
+            android:id="@+id/QueueText"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:text="Add to Queue"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/PLayListLL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/QueueLL"
+        android:layout_marginTop="40dp"
+        android:background="#00000000"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        tools:ignore="NotSibling">
+
+        <ImageButton
+            android:id="@+id/PlayListBtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="15dp"
+                android:backgroundTint="#00000000"
+            android:src="@drawable/playlist" />
+
+        <TextView
+            android:id="@+id/PLayListText"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:text="Add to PlayList"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+</RelativeLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
